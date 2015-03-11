@@ -51,8 +51,10 @@ $(document).ready(function() {
 		open_yt_bf(this);
 	});
 	$("a[href*='youtu.be'], a[href*='youtube']").click(function(e) {
-		e.preventDefault();
-		open_yt_at(this);
+		if ($(this).attr('data-yt').length==11) {
+			e.preventDefault();
+			open_yt_at(this);
+		}
 	});
 });
 
@@ -70,7 +72,9 @@ $(document).ajaxComplete(function() {
 		open_yt_bf(this);
 	});
 	$("a[href*='youtu.be'], a[href*='youtube']").click(function(e) {
-		e.preventDefault();
-		open_yt_at(this);
+		if ($(this).attr('data-yt').length==11) {
+			e.preventDefault();
+			open_yt_at(this);
+		}
 	});
 });
